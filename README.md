@@ -46,8 +46,8 @@ You can check out the live version here: [My Portfolio](https://vighnesh7711.git
 For feedback or collaboration, feel free to connect:
 
 - [LinkedIn](https://www.linkedin.com/in/vighnesh-gawande-955bb7301/)
-- [GitHub]((https://github.com/Vighnesh7711))
-- [Instagram]((https://www.instagram.com/_vigh_nesh.zip_/))
+- [GitHub](https://github.com/Vighnesh7711)
+- [Instagram](https://www.instagram.com/_vigh_nesh.zip_/)
 
 ---
 
