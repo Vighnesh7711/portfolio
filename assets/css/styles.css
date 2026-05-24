@@ -319,7 +319,6 @@ body::after {
   border: 1px solid rgba(0, 217, 255, 0.08) !important;
   border-radius: var(--radius-lg) !important;
   padding: 2.5rem !important;
-  padding-bottom: 6rem !important;
   position: relative;
   overflow: visible !important;
   transition: var(--transition-cyber) !important;
@@ -328,11 +327,11 @@ body::after {
 }
 
 .project-btn-wrapper {
-  position: absolute;
-  bottom: 2rem;
-  left: 0;
-  width: 100%;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 217, 255, 0.08);
   text-align: center;
+  clear: both;
 }
 
 #otherinfo .row,
@@ -767,7 +766,6 @@ footer section .bs-icon {
   #project .row > .col,
   #project .row > [class*="col-"] {
     padding: 1.8rem !important;
-    padding-bottom: 5.5rem !important;
   }
 
   .last-sec {
