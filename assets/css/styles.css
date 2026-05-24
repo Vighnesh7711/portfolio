@@ -431,14 +431,9 @@ body::after {
 }
 
 /* ===== EDUCATION SECTION DECO ===== */
-#education {
-  position: relative;
-}
-
-#education .text-bg {
-  border-left: 2px solid rgba(0, 217, 255, 0.2);
-  padding-left: 2rem;
-  margin-left: 0.5rem;
+#education .glass-card {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ===== GLOWING CONNECTIVE LINES & DIAGONS ===== */
@@ -572,11 +567,9 @@ body::after {
 }
 
 /* ===== ABOUT SECTION ===== */
-#about .text-bg {
-  max-width: 850px;
-  font-size: 1rem !important;
-  border-left: 2px solid rgba(250, 204, 21, 0.2);
-  padding-left: 2rem;
+#about .glass-card {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ===== FOOTER & CONTACT ===== */
@@ -775,10 +768,7 @@ footer section .bs-icon {
     gap: 1.5rem;
   }
 
-  #education .text-bg,
-  #about .text-bg {
-    padding-left: 1rem;
-  }
+
 }
 
 /* ===== THREE.JS HERO BACKGROUND CANVAS ===== */
