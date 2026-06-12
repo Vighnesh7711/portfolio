@@ -779,20 +779,90 @@ footer section .bs-icon {
 
 }
 
-/* ===== THREE.JS HERO BACKGROUND CANVAS ===== */
-#three-hero-canvas {
-  position: absolute;
+/* ===== THREE.JS 3D MODEL FULL-PAGE BACKGROUND ===== */
+#model-3d-bg {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* directly behind container text */
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.55;
+  transition: opacity 1.5s ease;
 }
 
-#three-hero-canvas canvas {
+#model-3d-bg canvas {
   display: block;
   width: 100% !important;
   height: 100% !important;
 }
+
+/* Model is always subtly visible — no hover interaction needed */
+
+/* Loading indicator for 3D model */
+.model-loading {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: rgba(8, 11, 17, 0.85);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 4px;
+  z-index: 10;
+  transition: opacity 0.6s ease;
+}
+
+.model-loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 217, 255, 0.2);
+  border-top-color: var(--accent-cyan);
+  border-radius: 50%;
+  animation: modelSpin 0.8s linear infinite;
+}
+
+@keyframes modelSpin {
+  to { transform: rotate(360deg); }
+}
+
+.model-loading-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* 3D model reacts to mouse movement — no click interaction needed */
+
+/* Ensure all content sits above the 3D background */
+header, main, footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Override particle canvas z-index to be above 3D but below content */
+#particles-canvas {
+  z-index: 1;
+}
+
+.cursor-glow {
+  z-index: 1;
+}
+
+/* On mobile, reduce model visibility and disable interaction hint */
+@media (max-width: 768px) {
+  #model-3d-bg {
+    opacity: 0.25;
+  }
+  .model-loading {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 14px;
+  }
+}
+
