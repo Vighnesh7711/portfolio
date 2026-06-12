@@ -748,16 +748,46 @@ footer section .bs-icon {
 @media (max-width: 768px) {
 
   .hero-parallax-bg {
-    height: 85vh !important;
-    min-height: 500px;
+    height: auto !important;
+    min-height: 100vh;
+    padding-bottom: 2rem;
   }
 
   .hero-container {
-    padding-top: 70px;
+    padding-top: 90px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-parallax-bg h1 {
+    font-size: clamp(2.2rem, 9vw, 3.5rem) !important;
+    letter-spacing: -1px;
+    word-break: break-word;
+  }
+
+  .cyber-hud-status {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-parallax-bg .text-badge {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1.2rem !important;
+    letter-spacing: 1px;
   }
 
   main section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
+  }
+
+  .section-heading {
+    font-size: 1.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .section-heading::after {
+    display: none;
   }
 
   .glass-card,
@@ -765,18 +795,107 @@ footer section .bs-icon {
   #otherinfo .row > [class*="col-"],
   #project .row > .col,
   #project .row > [class*="col-"] {
-    padding: 1.8rem !important;
+    padding: 1.5rem !important;
+  }
+
+  .row-column {
+    font-size: 1.1rem !important;
+  }
+
+  .text-bg, .text-bg2 {
+    font-size: 0.88rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .project-btn-wrapper {
+    margin-top: 1.5rem !important;
+    padding-top: 1rem !important;
   }
 
   .last-sec {
-    padding: 2rem !important;
+    padding: 1.5rem !important;
+    margin: 0 0.5rem;
   }
 
   .last-sec .row {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
+  .last-sec p.fs-1 {
+    font-size: 1.3rem !important;
+    text-align: center;
+  }
 
+  .lastbutton {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1.5rem !important;
+  }
+
+  /* Contact section mobile fixes */
+  footer section .row {
+    flex-direction: column;
+  }
+
+  footer section h2 {
+    font-size: 1.4rem !important;
+  }
+
+  footer .fs-2 {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+
+  footer .fs-3 {
+    font-size: 0.75rem !important;
+    text-align: center;
+  }
+
+  footer .col-md-6 {
+    text-align: center;
+  }
+
+  footer section .d-flex.align-items-center.p-3 {
+    padding: 0.75rem !important;
+  }
+
+  footer section h6 {
+    font-size: 0.85rem !important;
+  }
+
+  footer section p {
+    font-size: 0.8rem !important;
+    word-break: break-all;
+  }
+
+  .form-control {
+    padding: 0.7rem 0.8rem !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Social icons spacing */
+  .list-inline .btn {
+    width: 46px;
+    height: 46px;
+    margin: 0 0.3rem;
+  }
+
+  .list-inline .btn i {
+    font-size: 18px !important;
+  }
+
+  /* Preparing message box */
+  .fs-2.fw-bold {
+    font-size: 1.1rem !important;
+  }
+
+  /* Navbar mobile */
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .navbar {
+    padding: 0.7rem 0 !important;
+  }
 }
 
 /* ===== THREE.JS 3D MODEL FULL-PAGE BACKGROUND ===== */
@@ -864,15 +983,50 @@ header, main, footer {
   z-index: 1;
 }
 
-/* On mobile, reduce model visibility and disable interaction hint */
+/* On mobile, keep model visible but slightly toned down */
 @media (max-width: 768px) {
   #model-3d-bg {
-    opacity: 0.25;
+    opacity: 0.45;
   }
   .model-loading {
-    bottom: 15px;
-    right: 15px;
-    padding: 8px 14px;
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+  }
+  .model-loading-text {
+    font-size: 0.65rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .hero-parallax-bg h1 {
+    font-size: 2rem !important;
+  }
+
+  .cyber-hud-status {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .glass-card,
+  #otherinfo .row > .col,
+  #otherinfo .row > [class*="col-"],
+  #project .row > .col,
+  #project .row > [class*="col-"] {
+    padding: 1.2rem !important;
+  }
+
+  .last-sec {
+    padding: 1rem !important;
+  }
+
+  .last-sec p.fs-1 {
+    font-size: 1.1rem !important;
+  }
+
+  footer section p {
+    font-size: 0.75rem !important;
   }
 }
 

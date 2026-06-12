@@ -27,19 +27,23 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
     5000
   );
 
+  const isMobile = window.innerWidth <= 768;
+
   // Renderer
   const renderer = new THREE.WebGLRenderer({
     alpha: true,
-    antialias: true,
-    powerPreference: 'high-performance'
+    antialias: !isMobile,
+    powerPreference: isMobile ? 'low-power' : 'high-performance'
   });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.enabled = !isMobile;
+  if (!isMobile) {
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  }
   container.appendChild(renderer.domElement);
 
   // ===== LIGHTING (matching Blender sun setup) =====
@@ -193,7 +197,9 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
       // ===== CAMERA — perfectly front-facing along the X-axis =====
       // Positioned straight in front (Z = 0) and slightly elevated (Y = 10)
-      camera.position.set(150, 10, 0);
+      // On mobile, bring camera closer so model is visible
+      const camDist = isMobile ? 110 : 150;
+      camera.position.set(camDist, 10, 0);
       camera.lookAt(0, 0, 0);
 
       // Store base rotation
