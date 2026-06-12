@@ -753,8 +753,8 @@ footer section .bs-icon {
 
   .hero-parallax-bg {
     height: auto !important;
-    min-height: 100vh;
-    padding-bottom: 2rem;
+    min-height: unset !important;
+    padding-bottom: 3rem;
   }
 
   .hero-container {
@@ -776,6 +776,21 @@ footer section .bs-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hud-graphic-col {
+    min-height: 160px !important;
+    margin-top: 1rem;
+  }
+
+  .hud-graphic-col .cyber-hud-graphic {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  /* Fix orbiting node transform-origin for smaller size */
+  .hud-graphic-col .hud-node {
+    transform-origin: 50% 73px !important;
   }
 
   .hero-parallax-bg h1 {
