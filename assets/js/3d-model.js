@@ -20,14 +20,15 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
   // Add a subtle fog for depth and to blend model edges with dark background
   scene.fog = new THREE.FogExp2(0x080b11, 0.006);
 
+  const isMobile = window.innerWidth <= 768;
+
   const camera = new THREE.PerspectiveCamera(
-    45,
+    isMobile ? 60 : 45,
     window.innerWidth / window.innerHeight,
     0.1,
     5000
   );
 
-  const isMobile = window.innerWidth <= 768;
 
   // Renderer
   const renderer = new THREE.WebGLRenderer({
@@ -48,8 +49,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
   // ===== LIGHTING (matching Blender sun setup) =====
 
-  // Ambient — soft overall illumination
-  const ambientLight = new THREE.AmbientLight(0x446688, 0.5);
+  // Ambient — soft overall illumination (brighter on mobile for visibility)
+  const ambientLight = new THREE.AmbientLight(0x446688, isMobile ? 1.0 : 0.5);
   scene.add(ambientLight);
 
   // ☀️ SUNLIGHT — strong directional to match Blender's sun
@@ -170,7 +171,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
             }
 
             // Add subtle emissive for visibility on dark background
-            mat.emissive = new THREE.Color(r * 0.04, g * 0.04, b * 0.04);
+            const emMul = isMobile ? 0.08 : 0.04;
+            mat.emissive = new THREE.Color(r * emMul, g * emMul, b * emMul);
           }
 
           // --- BACKFACE CULLING: hide invisible/back portions ---
@@ -195,12 +197,14 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
       basePosition.set(0, 18, 0);
       modelGroup.position.copy(basePosition);
 
-      // ===== CAMERA — perfectly front-facing along the X-axis =====
-      // Positioned straight in front (Z = 0) and slightly elevated (Y = 10)
-      // On mobile, bring camera closer so model is visible
-      const camDist = isMobile ? 110 : 150;
-      camera.position.set(camDist, 10, 0);
-      camera.lookAt(0, 0, 0);
+      // ===== CAMERA =====
+      // On mobile (portrait), use wider FOV and pull camera back to fit building in narrow viewport
+      if (isMobile) {
+        camera.position.set(200, 30, 0);
+      } else {
+        camera.position.set(150, 10, 0);
+      }
+      camera.lookAt(0, 10, 0);
 
       // Store base rotation
       baseRotation.copy(modelGroup.rotation);

@@ -48,6 +48,10 @@ body {
   position: relative;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* ===== PARTICLE CANVAS (must be fixed to avoid pushing content) ===== */
 #particles-canvas {
   position: fixed;
@@ -757,6 +761,21 @@ footer section .bs-icon {
     padding-top: 90px;
     padding-left: 1rem;
     padding-right: 1rem;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .hero-container .row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100% !important;
+    max-width: 100vw;
+  }
+
+  .hero-container .col-lg-7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-parallax-bg h1 {
@@ -896,6 +915,22 @@ footer section .bs-icon {
   .navbar {
     padding: 0.7rem 0 !important;
   }
+
+  /* Prevent any horizontal overflow on mobile */
+  .container, .container-fluid {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .row > * {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 /* ===== THREE.JS 3D MODEL FULL-PAGE BACKGROUND ===== */
@@ -983,10 +1018,10 @@ header, main, footer {
   z-index: 1;
 }
 
-/* On mobile, keep model visible but slightly toned down */
+/* On mobile, keep model visible */
 @media (max-width: 768px) {
   #model-3d-bg {
-    opacity: 0.45;
+    opacity: 0.5;
   }
   .model-loading {
     bottom: 10px;
