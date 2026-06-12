@@ -829,6 +829,16 @@ footer section .bs-icon {
   to { transform: rotate(360deg); }
 }
 
+@keyframes panelScan {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 .model-loading-text {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.75rem;
@@ -864,5 +874,21 @@ header, main, footer {
     right: 15px;
     padding: 8px 14px;
   }
+}
+
+/* Cyberpunk HUD Ring animations */
+@keyframes spinCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinCCW {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes orbitNode {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
 }
 

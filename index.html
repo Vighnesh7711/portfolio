@@ -57,16 +57,47 @@
             </div>
         </nav>
         <div data-bss-disabled-mobile="true" data-bss-parallax-bg="true" class="hero-parallax-bg"
-            style="background-image: url(&quot;assets/img/12893177_5072616.jpg&quot;);background-position: center;background-size: cover;">
-
+            style="background: transparent;">
 
             <div class="container hero-container">
-                <div class="cyber-hud-status reveal">
-                    <span class="hud-indicator"></span>
-                    <span>SYSTEM ACTIVE // SECURE_PORT_8080</span>
+                <div class="row w-100 align-items-center">
+                    <!-- Left side: Name and badge -->
+                    <div class="col-lg-7">
+                        <div class="cyber-hud-status reveal">
+                            <span class="hud-indicator"></span>
+                            <span>SYSTEM ACTIVE // SECURE_PORT_8080</span>
+                        </div>
+                        <h1 class="reveal">VIGHNESH GAWANDE</h1>
+                        <p class="text-badge reveal">IT Engineer still learning.</p>
+                    </div>
+                    
+                    <!-- Right side: Cyberpunk Rotating Tech HUD Graphic -->
+                    <div class="col-lg-5 d-none d-lg-block reveal reveal-delay-1 d-flex justify-content-center align-items-center" style="min-height: 250px;">
+                        <div class="cyber-hud-graphic" style="position: relative; width: 220px; height: 220px; margin: 0 auto;">
+                            <!-- Outer rotating tech circle -->
+                            <div class="hud-outer-ring" style="position: absolute; inset: 0; border: 2px dashed rgba(0, 217, 255, 0.35); border-radius: 50%; animation: spinCW 25s linear infinite; box-shadow: 0 0 15px rgba(0, 217, 255, 0.05);"></div>
+                            
+                            <!-- Inner reverse-rotating tech circle -->
+                            <div class="hud-inner-ring" style="position: absolute; inset: 22px; border: 1px dashed rgba(250, 204, 21, 0.25); border-radius: 50%; animation: spinCCW 18s linear infinite;"></div>
+                            
+                            <!-- Inner glow core -->
+                            <div class="hud-core" style="position: absolute; inset: 55px; border: 1px solid rgba(0, 217, 255, 0.3); border-radius: 50%; background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);"></div>
+                            
+                            <!-- Center target crosshair lines -->
+                            <div class="hud-crosshair-h" style="position: absolute; top: 50%; left: -15px; right: -15px; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.4) 20%, rgba(0, 217, 255, 0.4) 80%, transparent); transform: translateY(-50%); pointer-events: none;"></div>
+                            <div class="hud-crosshair-v" style="position: absolute; left: 50%; top: -15px; bottom: -15px; width: 1px; background: linear-gradient(180deg, transparent, rgba(0, 217, 255, 0.4) 20%, rgba(0, 217, 255, 0.4) 80%, transparent); transform: translateX(-50%); pointer-events: none;"></div>
+                            
+                            <!-- Corner decorative brackets -->
+                            <div style="position: absolute; top: -10px; left: -10px; width: 15px; height: 15px; border-top: 2px solid var(--accent-cyan); border-left: 2px solid var(--accent-cyan); filter: drop-shadow(0 0 4px var(--accent-cyan));"></div>
+                            <div style="position: absolute; top: -10px; right: -10px; width: 15px; height: 15px; border-top: 2px solid var(--accent-cyan); border-right: 2px solid var(--accent-cyan); filter: drop-shadow(0 0 4px var(--accent-cyan));"></div>
+                            <div style="position: absolute; bottom: -10px; left: -10px; width: 15px; height: 15px; border-bottom: 2px solid var(--accent-cyan); border-left: 2px solid var(--accent-cyan); filter: drop-shadow(0 0 4px var(--accent-cyan));"></div>
+                            <div style="position: absolute; bottom: -10px; right: -10px; width: 15px; height: 15px; border-bottom: 2px solid var(--accent-cyan); border-right: 2px solid var(--accent-cyan); filter: drop-shadow(0 0 4px var(--accent-cyan));"></div>
+
+                            <!-- Orbiting target dot -->
+                            <div class="hud-node" style="position: absolute; width: 6px; height: 6px; background: #ffffff; border-radius: 50%; box-shadow: 0 0 8px #ffffff, 0 0 15px var(--accent-cyan); top: -3px; left: 50%; transform: translateX(-50%); animation: orbitNode 8s linear infinite; transform-origin: 50% 113px;"></div>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="reveal">VIGHNESH GAWANDE</h1>
-                <p class="text-badge reveal">IT Engineer still learning.</p>
             </div>
         </div>
     </header>
